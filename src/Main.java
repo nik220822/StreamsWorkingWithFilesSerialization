@@ -22,17 +22,15 @@ public class Main {
     }
 
     public static void main(String[] arg) throws IOException {
-        createDir("C:/JD_Games/src");
-        createDir("C:/JD_Games/res");
-        createDir("C:/JD_Games/savegames");
-        createDir("C:/JD_Games/temp");
-        createDir("C:/JD_Games/src/main");
-        createDir("C:/JD_Games/src/test");
+        String[] listOfDir = {"C:/JD_Games/src", "C:/JD_Games/res",
+                "C:/JD_Games/savegames", "C:/JD_Games/temp",
+                "C:/JD_Games/src/main", "C:/JD_Games/src/test",
+                "C:/JD_Games/res/drawables", "C:/JD_Games/res/vectors", "C:/JD_Games/res/icons"}
+        for (String dirPath : listOfDir) {
+            createDir(dirPath);
+        }
         createFile("C:/JD_Games/src/main/Main.java");
         createFile("C:/JD_Games/src/main/Utils.java");
-        createDir("C:/JD_Games/res/drawables");
-        createDir("C:/JD_Games/res/vectors");
-        createDir("C:/JD_Games/res/icons");
         File tempTxt = createFile("C:/JD_Games/temp/temp.txt");
         FileWriter fileWriter = new FileWriter(tempTxt);
         fileWriter.write(String.valueOf(log));
